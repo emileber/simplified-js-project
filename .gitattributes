@@ -1,0 +1,49 @@
+# Do not normalize local files to CRLF on windows.
+core.eol lf
+core.autocrlf false
+
+# Perform normalization to LF if needed.
+* text eol=lf
+
+# These files are binary and should be left untouched
+# (binary is a macro for -text -diff)
+# --------- image
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+# --------- video
+*.mov binary
+*.mp4 binary
+*.mp3 binary
+*.flv binary
+*.fla binary
+*.swf binary
+# --------- archive
+*.tar binary
+*.gz binary
+*.zip binary
+*.7z binary
+# --------- font
+*.ttf binary
+*.woff binary
+*.woff2 binary
+*.eot binary
+# --------- other
+*.mo binary
+
+# These files are text
+*.gitattributes text
+*.gitignore text
+*.md text
+*.js text
+*.html text
+*.json text
+*.lock text
+*.po text
+*.txt text
+*.xml text
+*.svg text
+*.scss text
+*.css text

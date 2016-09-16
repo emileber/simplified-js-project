@@ -1,0 +1,24 @@
+{
+  "name": "simplified-js-project",
+  "description": "Simplifying team work with tools and automation",
+  "main": "",
+  "authors": [
+    "Emile Bergeron <ber.emile@prismalstudio.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "gulp",
+    "automation",
+    "javascript",
+    "linting"
+  ],
+  "homepage": "https://github.com/emileber/simplified-js-project",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "libs/",
+    "test",
+    "tests"
+  ]
+}
