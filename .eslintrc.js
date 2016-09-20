@@ -1,4 +1,11 @@
 module.exports = {
+    extends: "eslint:recommended",
+    env: {
+        "browser": false,
+        "node": true,
+        "es6": true
+    },
+    root: true,
     rules: {
         "linebreak-style": ["error", "unix"],
         "semi": ["error", "always"],
@@ -6,6 +13,8 @@ module.exports = {
         "comma-spacing": ["error"],
         "computed-property-spacing": ["error", "never"],
         "eol-last": ["error", "unix"],
+        "no-alert": "error",
+        "no-console": 0,
         "no-extra-parens": "error",
         "no-extra-semi": "error",
         "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }],

@@ -1,66 +1,59 @@
 /* eslint-env es6 */
+
 module.exports = function() {
-    var src = './src/';
-    var app = src + 'app/';
-    var temp = src + '.tmp/';
-    var dest = src;
-    var build = './www/';
-    var bower = {
-        json: require('./bower.json'),
-        dir: src + 'lib/',
-        ignorePath: '../..',
-    };
+    var src = 'app/',
+        temp = `${src}.tmp/`,
+        bower = {
+            directory: `${src}libs/`,
+        },
+        build = 'build/';
+
     var config = {
         /**
          * File paths
          */
-        // all javascript that we want to vet
-        alljs: [
-            './src/app/**/*.js',
-            './*.js',
-            '!app.build.js'
-        ],
-        api: "https://www.totalcoaching.com/api/v3/",
-        bower: bower,
+        app: {
+            name: 'main',
+            mainConfigFile: `${src}js/main.js`,
+            out: `${build}js/main.min.js`,
+            baseUrl: `${src}js`,
+        },
         build: build,
-        cordova: [
-            "cordova.js",
-            "cordova_plugins.js"
-        ],
+        bower: bower,
         css: 'assets/css/',
-        dest: dest,
         fonts: {
             dir: 'assets/fonts/',
-            bower: ['font-awesome', 'simple-line-icons']
+            bower: ['font-awesome']
         },
-        // htmltemplates: app + '**/*.html',
         images: 'assets/images/',
         index: src + 'index.html',
         // app js, with no specs
         js: [
-            // src + '**/*.module.js',
-            src + '**/*.js',
-            '!' + src + '**/*.spec.js',
-            '!' + bower.dir + '**/*.js'
+            '**/*.js',
+            `!${bower.directory}**/*`,
+            '!node_modules/**/*',
+            `!${build}**/*`
         ],
+        libs: {
+            dir: bower.directory,
+            src: [
+                'libs/todomvc-common/base.js',
+                'libs/requirejs/require.js'
+            ],
+            bundle: 'libs/bundle.min.js'
+        },
         /**
          * optimized files
          */
         optimized: {
-            app: 'app/main.min',
+            app: 'js/main.min.js',
             css: 'assets/css/main.min.css'
         },
-        permissions: {
-            src: [
-                "hooks/**/*.js"
-            ],
-            value: 755
-        },
-        rjs: 'app.build.js',
+        requirejs: 'libs/requirejs/require.min.js',
+
         sass: src + 'sass/main.scss',
         src: src,
         temp: temp,
-        specHelpers: [src + 'test-helpers/*.js']
     };
 
     return config;
