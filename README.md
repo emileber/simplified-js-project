@@ -1,4 +1,7 @@
 # simplified-js-project
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/emileber/simplified-js-project.svg)](https://greenkeeper.io/)
+
 Simplifying team work with tools and automation.
 
 ## Gulp tasks
